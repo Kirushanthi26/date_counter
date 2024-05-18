@@ -18,6 +18,12 @@ const AdvCounter = () => {
     setCount((crrStep) => crrStep + step);
   };
 
+  var options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   const date = new Date();
   date.setDate(date.getDate() + count);
 
@@ -44,10 +50,16 @@ const AdvCounter = () => {
       <p className="mb-8 flex justify-center items-center">
         <span>
           {count === 0
-            ? `Today is ${date.toLocaleDateString()}`
+            ? `Today is ${date.toLocaleDateString("en-US", options)}`
             : count > 0
-            ? `${count} days from today is ${date.toLocaleDateString()}`
-            : `${count} days ago was ${date.toLocaleDateString()}`}
+            ? `${count} days from today is ${date.toLocaleDateString(
+                "en-US",
+                options
+              )}`
+            : `${count} days ago was ${date.toLocaleDateString(
+                "en-US",
+                options
+              )}`}
         </span>
       </p>
     </div>
