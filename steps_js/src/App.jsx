@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AdvCounter from "./AdvCounter";
 
 export const messages = [
   "Learn React ⚛️",
@@ -67,6 +68,7 @@ const App = () => {
           </div>
         </div>
       )}
+      <AdvCounter />
     </>
   );
 };
