@@ -17,6 +17,7 @@ const App = () => {
   };
   const handleNext = () => {
     if (step < 3) {
+      //current step + 1
       setStep((prev) => prev + 1);
     }
   };
