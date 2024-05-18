@@ -24,27 +24,16 @@ const App = () => {
     <div className="flex items-center justify-center min-h-screen">
       <div className="bg-gray-100 w-3/4 rounded-lg py-8 px-36">
         <div className="flex justify-between space-x-4">
-          <div
-            className={`${
-              step >= 1 ? "bg-purple-700 text-white" : "bg-gray-200"
-            } w-12 h-12 font-medium rounded-full flex items-center justify-center`}
-          >
-            1
-          </div>
-          <div
-            className={`${
-              step >= 2 ? "bg-purple-700 text-white" : "bg-gray-200"
-            } w-12 h-12 font-medium rounded-full flex items-center justify-center`}
-          >
-            2
-          </div>
-          <div
-            className={`${
-              step >= 3 ? "bg-purple-700 text-white" : "bg-gray-200"
-            } w-12 h-12 font-medium rounded-full flex items-center justify-center`}
-          >
-            3
-          </div>
+          {[1, 2, 3].map((num) => (
+            <div
+              key={num}
+              className={`${
+                step >= num ? "bg-purple-700 text-white" : "bg-gray-200"
+              } w-12 h-12 font-medium rounded-full flex items-center justify-center`}
+            >
+              {num}
+            </div>
+          ))}
         </div>
         <div>
           <p className="text-center font-semibold text-2xl py-28">
